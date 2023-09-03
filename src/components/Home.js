@@ -69,7 +69,7 @@ const Home = () => {
         fetchWeather={fetchWeather}
       />
       {/* Weather Data */}
-      <main className='px-28 py-20 flex flex-col items-center'>
+      <main className='px-6 sm:px-10 lg:px-28 py-24 flex flex-col items-center'>
 
 
           {loading ? (
@@ -96,7 +96,7 @@ const Home = () => {
 
               </div>
 
-              <section className='flex w-full justify-between gap-4'>
+              <section className='flex flex-col sm:flex-row w-full justify-between gap-4 py-4'>
                   <CurrentWeatherCard 
                     weatherData={weatherData}
                   />

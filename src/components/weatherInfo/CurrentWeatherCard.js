@@ -4,7 +4,7 @@ import RiseSet from './RiseSet';
 
 const CurrentWeatherCard = ({weatherData}) => {
   return (
-    <div className='flex justify-between bg-[#1b1b1b] p-4 rounded-md w-1/2 cursor-pointer'>
+    <div className='flex justify-between bg-[#1b1b1b] p-4 rounded-md w-full sm:w-1/2 cursor-pointer'>
       <div>
         <span className='font-bold text-gray-500 '>Current Weather</span>
 
@@ -14,12 +14,11 @@ const CurrentWeatherCard = ({weatherData}) => {
             <div className='flex flex-col justify-center'>
               <span>
                 <img src={`http://openweathermap.org/img/w/${weatherData.list[0].weather[0].icon}.png`} alt='icon'
-                  width={96}
-                  // className='w-24'
+                  className='w-14 sm:w-20'
                 />
               </span>
               <span>
-                <div className='flex items-center text-7xl font-bold'>
+                <div className='flex items-center text-3xl lg:text-7xl font-bold'>
                   {weatherData.list[0].main.temp}
                   <TbTemperatureCelsius 
                     className='w-6'

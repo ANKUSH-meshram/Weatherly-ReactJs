@@ -4,12 +4,12 @@ import {TbTemperatureCelsius} from 'react-icons/tb'
 
 const TodaysHighlights = ({weatherData}) => {
   return (
-    <div className='w-1/2 p-4 bg-[#1b1b1b] rounded-md cursor-pointer'>
+    <div className='w-full sm:w-1/2 p-4 bg-[#1b1b1b] rounded-md cursor-pointer'>
       <span className='font-bold text-gray-500'>Today's highlights</span>
 
       <section>
         {typeof weatherData.list != 'undefined' ? (
-          <div className='flex flex-wrap justify-between gap-x-10 gap-y-3 py-4'>
+          <div className='flex flex-wrap justify-between sm:gap-x-10 gap-y-3 py-4'>
             {/* feels like */}
             <div className='flex flex-col w-1/3'>
               <span className='text-gray-400'>Feels like</span>
