@@ -21,11 +21,11 @@ const Home = () => {
   const fetchWeather = async (e) => {
     setLoading(true);
     try {
-      const {data} = await axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${searchText}&appid=a45baf94ffee672f1deca709e63c608d&units=metric&cnt=6`)
+      const {data} = await axios.get(`${BaseURL}?q=${searchText}&appid=${Api_Key}&units=metric&cnt=6`)
       setWeatherData(data);
-      console.log(data)
+      // console.log(data)
     } catch (error) {
-      console.log(error)
+      // console.log(error)
     }
     setLoading(false);
     setSearchText("")
@@ -38,7 +38,8 @@ const Home = () => {
                 let lon = position.coords.longitude;
                 setLat(la)
                 setLong(lon)
-                setUrl(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=a45baf94ffee672f1deca709e63c608d&units=metric&cnt=5`)
+                // console.log(`lat : ${lat} and lon: ${lon}`)
+                setUrl(`${BaseURL}?lat=${lat}&lon=${long}&appid=${Api_Key}&units=metric&cnt=5`)
           }) 
     }
   }
@@ -48,9 +49,9 @@ const Home = () => {
     try {
       const {data} = await axios.get(`${url}`)
       setWeatherData(data)
-      console.log(data)
+      // console.log(data)
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
     setLoading(false);
   }
@@ -60,7 +61,7 @@ const Home = () => {
     if(url){ 
       getWeather();
     }
-    },[])
+    },[url])
   
   return (
     <div className=' flex flex-col gap-4'>
