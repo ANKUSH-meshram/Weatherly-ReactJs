@@ -7,6 +7,7 @@ import TodaysHighlights from './weatherInfo/TodaysHighlights';
 import {FaHome} from 'react-icons/fa'
 import { TailSpin } from "react-loader-spinner";
 import DailyForecast from './weatherInfo/DailyForecast';
+import Footer from './footer/Footer';
 
 const Home = () => {
   const [searchText, setSearchText] = useState("");
@@ -113,7 +114,8 @@ const Home = () => {
             </>        
           )}
 
-      </main>  
+      </main> 
+      <Footer />
     </div>
   );
 };
